@@ -17,3 +17,12 @@ TODO Finish this after writing the Medium article!!!
 * Whilst not conclusive, the extent of customisations include:
     - JSON data handling logic has been added to the `routes.js` file.
     - TODO Add other customisation notes here.
+
+## How to use
+
+Instructions how to use.
+
+## Other resources
+
+* GOV.UK Prototype Kit page
+* TODO etc.
