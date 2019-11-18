@@ -19,14 +19,13 @@
   <div class="govuk-grid-row">
     {% for person in data.people %}
     <div class="govuk-grid-column-one-third-from-desktop person-panel">
-      <a href="#">
-        <span class="govuk-caption-m">{{ person.role }}</span>
-        <h2 class="govuk-heading-m">{{ person.name.first }} {{ person.name.last }}</h2>
-        <p class="govuk-body">{{ person.bio }}</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>GOV.UK Design System</li>
-        </ul>
-      </a>
+      <span class="govuk-caption-m">{{ person.role }}</span>
+      <h2 class="govuk-heading-m">{{ person.name.first }} {{ person.name.last }}</h2>
+      <p class="govuk-body">{{ person.bio }}</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>GOV.UK Design System</li>
+      </ul>
+      <a href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Start now</a>
     </div>
     {% endfor %}
 </div>
