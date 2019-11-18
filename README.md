@@ -10,6 +10,7 @@ TODO Finish this after writing the Medium article!!!
 
 ## About this code
 
+* **Disclaimer!** This code is intended for prototyping and as such the 'quality' of the code is appropriate to designing, demonstrating and iterating prototypes. None of the code is meant to be production ready and there are almost certainly better ways to handle JSON data when building scalable, extensible, production ready services. But if you're responsible for building such services, you probably already know that. :-)
 * This repo contains a fully installable, customised version of the GOV.UK Prototype Kit that demonstrates the methods described for using JSON data to make dynamic prototypes.
 * The code is meant for demonstration and exploration purposes only and is **not** intended to be a GOV.UK Prototype Kit starter project.
 * In an attempt to be as 'maintenance free' as possible, wherever possible dependent code is included rather than using sub-repositories or packages (or any smarter methods that would probably be preferable in an ongoing codebase).
