@@ -1,0 +1,392 @@
+[
+  {
+    "_uid": "5dd27edfdd5cf341985b2693",
+    "gender": "male",
+    "name": {
+      "first": "Arnold",
+      "last": "Baxter"
+    },
+    "role": "Director",
+    "age": 35,
+    "eyeColor": "brown",
+    "email": "arnold.baxter@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/arnold.baxter@something.co.uk.png",
+    "phone": "07934 432252",
+    "bio": "Reprehenderit eiusmod fugiat dolore irure ad culpa anim culpa esse minim consequat exercitation. Enim non id duis aute nostrud eu.",
+    "num_projects": 6,
+    "isEmployed": true,
+    "employment": {
+      "start_date": "Sunday, May 5, 2019 12:03 AM"
+    }
+  },
+  {
+    "_uid": "5dd27edf3443fed081d595eb",
+    "gender": "male",
+    "name": {
+      "first": "Trenton",
+      "last": "Carney"
+    },
+    "role": "Project Manager",
+    "age": 58,
+    "eyeColor": "brown",
+    "email": "trenton.carney@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/trenton.carney@something.co.uk.png",
+    "phone": "07949 580287",
+    "bio": "Ex pariatur culpa magna dolor consectetur fugiat nostrud. Sint id nisi officia nulla.",
+    "num_projects": 10,
+    "isEmployed": false,
+    "employment": {
+      "start_date": "Monday, February 2, 2015 12:03 AM",
+      "end_date": "Tuesday, December 27, 2016 9:10 AM"
+    }
+  },
+  {
+    "_uid": "5dd27edfc82afd9885803ca2",
+    "gender": "female",
+    "name": {
+      "first": "Lanie",
+      "last": "Williams"
+    },
+    "role": "Product Owner",
+    "age": 61,
+    "eyeColor": "brown",
+    "email": "lanie.williams@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/lanie.williams@something.co.uk.png",
+    "phone": "07848 494270",
+    "bio": "In eu cupidatat mollit commodo ex voluptate aliqua esse non amet amet enim. Sit officia commodo est magna anim laborum.",
+    "num_projects": 4,
+    "isEmployed": true,
+    "employment": {
+      "start_date": "Saturday, December 15, 2018 9:34 PM"
+    }
+  },
+  {
+    "_uid": "5dd27edfa9c199da166900f8",
+    "gender": "female",
+    "name": {
+      "first": "Wilma",
+      "last": "Spencer"
+    },
+    "role": "UI Designer",
+    "age": 49,
+    "eyeColor": "green",
+    "email": "wilma.spencer@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/wilma.spencer@something.co.uk.png",
+    "phone": "07915 521200",
+    "bio": "Nulla Lorem aliqua nostrud eiusmod incididunt voluptate esse culpa ex dolore quis. Ut officia occaecat tempor ipsum tempor eiusmod ad amet proident duis.",
+    "num_projects": 6,
+    "isEmployed": false,
+    "employment": {
+      "start_date": "Friday, June 19, 2015 9:01 AM",
+      "end_date": "Friday, October 30, 2015 10:23 PM"
+    }
+  },
+  {
+    "_uid": "5dd27edf99741e4bafe6d779",
+    "gender": "male",
+    "name": {
+      "first": "Modesto",
+      "last": "Tillman"
+    },
+    "role": "Director",
+    "age": 19,
+    "eyeColor": "green",
+    "email": "modesto.tillman@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/modesto.tillman@something.co.uk.png",
+    "phone": "07978 533285",
+    "bio": "Ad cupidatat non adipisicing est magna nulla pariatur. Amet ipsum pariatur eiusmod amet ullamco quis tempor consequat id in.",
+    "num_projects": 11,
+    "isEmployed": true,
+    "employment": {
+      "start_date": "Monday, June 24, 2019 4:48 AM"
+    }
+  },
+  {
+    "_uid": "5dd27edfb1f66a9981697982",
+    "gender": "male",
+    "name": {
+      "first": "Whitney",
+      "last": "Chang"
+    },
+    "role": "Project Manager",
+    "age": 64,
+    "eyeColor": "brown",
+    "email": "whitney.chang@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/whitney.chang@something.co.uk.png",
+    "phone": "07905 421241",
+    "bio": "Deserunt aliqua id mollit labore officia ad anim. Ipsum nulla qui et amet irure ut excepteur in do tempor aliqua fugiat sunt ad.",
+    "num_projects": 13,
+    "isEmployed": false,
+    "employment": {
+      "start_date": "Monday, July 23, 2018 11:17 AM",
+      "end_date": "Saturday, February 2, 2019 7:03 PM"
+    }
+  },
+  {
+    "_uid": "5dd27edfb1592bf7151e8b60",
+    "gender": "female",
+    "name": {
+      "first": "Lilly",
+      "last": "Sellers"
+    },
+    "role": "UX Designer",
+    "age": 38,
+    "eyeColor": "brown",
+    "email": "lilly.sellers@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/lilly.sellers@something.co.uk.png",
+    "phone": "07837 600349",
+    "bio": "Commodo consequat cillum minim velit elit aliqua cupidatat. Labore proident non in sit est.",
+    "num_projects": 12,
+    "isEmployed": false,
+    "employment": {
+      "start_date": "Friday, December 30, 2016 2:32 PM",
+      "end_date": "Tuesday, May 7, 2019 8:36 PM"
+    }
+  },
+  {
+    "_uid": "5dd27edff8791492c30eabd2",
+    "gender": "female",
+    "name": {
+      "first": "Venus",
+      "last": "Wilder"
+    },
+    "role": "Technical Architect",
+    "age": 22,
+    "eyeColor": "green",
+    "email": "venus.wilder@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/venus.wilder@something.co.uk.png",
+    "phone": "07904 527347",
+    "bio": "Aliqua adipisicing reprehenderit aute in duis tempor est reprehenderit dolore veniam est sit. Eiusmod voluptate ea ad ex duis aute.",
+    "num_projects": 10,
+    "isEmployed": true,
+    "employment": {
+      "start_date": "Thursday, July 21, 2016 8:11 PM"
+    }
+  },
+  {
+    "_uid": "5dd27edf9c6b875aa23b0b17",
+    "gender": "female",
+    "name": {
+      "first": "Marisha",
+      "last": "Ellison"
+    },
+    "role": "UX Designer",
+    "age": 43,
+    "eyeColor": "green",
+    "email": "marisha.ellison@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/marisha.ellison@something.co.uk.png",
+    "phone": "07972 585245",
+    "bio": "Est tempor reprehenderit consectetur et reprehenderit ex est officia. Sit dolore enim velit esse sunt excepteur pariatur cupidatat nostrud eu culpa consectetur officia.",
+    "num_projects": 10,
+    "isEmployed": true,
+    "employment": {
+      "start_date": "Monday, April 22, 2019 9:30 AM"
+    }
+  },
+  {
+    "_uid": "5dd27edfa5b0ef8eed556987",
+    "gender": "female",
+    "name": {
+      "first": "Wilma",
+      "last": "Wallace"
+    },
+    "role": "Developer",
+    "age": 29,
+    "eyeColor": "brown",
+    "email": "wilma.wallace@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/wilma.wallace@something.co.uk.png",
+    "phone": "07862 560333",
+    "bio": "Labore tempor cupidatat ipsum aliqua enim pariatur officia incididunt duis. Sit minim tempor non elit.",
+    "num_projects": 5,
+    "isEmployed": false,
+    "employment": {
+      "start_date": "Wednesday, July 24, 2019 2:45 AM",
+      "end_date": "Wednesday, September 11, 2019 8:48 AM"
+    }
+  },
+  {
+    "_uid": "5dd27edfa4fdab3ee36c3024",
+    "gender": "female",
+    "name": {
+      "first": "Thomasena",
+      "last": "Cruz"
+    },
+    "role": "Chief Tea-maker",
+    "age": 19,
+    "eyeColor": "blue",
+    "email": "thomasena.cruz@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/thomasena.cruz@something.co.uk.png",
+    "phone": "07821 463287",
+    "bio": "Laborum veniam adipisicing exercitation fugiat laboris mollit aliquip tempor elit est pariatur est culpa. Enim incididunt minim consectetur magna non velit dolore ipsum nulla labore.",
+    "num_projects": 10,
+    "isEmployed": true,
+    "employment": {
+      "start_date": "Monday, August 31, 2015 9:07 PM"
+    }
+  },
+  {
+    "_uid": "5dd27edf9d0373476d3c77d1",
+    "gender": "male",
+    "name": {
+      "first": "Kendrick",
+      "last": "Maldonado"
+    },
+    "role": "Director",
+    "age": 18,
+    "eyeColor": "green",
+    "email": "kendrick.maldonado@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/kendrick.maldonado@something.co.uk.png",
+    "phone": "07935 478208",
+    "bio": "Excepteur minim sit ea cupidatat nisi enim exercitation consequat minim incididunt dolor ipsum. Ut do duis et officia ex dolore ad excepteur minim.",
+    "num_projects": 10,
+    "isEmployed": false,
+    "employment": {
+      "start_date": "Thursday, November 14, 2019 5:30 PM",
+      "end_date": "Sunday, November 17, 2019 2:42 AM"
+    }
+  },
+  {
+    "_uid": "5dd27edf41a974f0285dde08",
+    "gender": "female",
+    "name": {
+      "first": "Lea",
+      "last": "Tucker"
+    },
+    "role": "Director",
+    "age": 63,
+    "eyeColor": "brown",
+    "email": "lea.tucker@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/lea.tucker@something.co.uk.png",
+    "phone": "07960 585344",
+    "bio": "Anim dolore fugiat irure occaecat adipisicing minim reprehenderit Lorem amet nostrud. Ea minim tempor pariatur pariatur quis aliquip non duis.",
+    "num_projects": 4,
+    "isEmployed": true,
+    "employment": {
+      "start_date": "Tuesday, July 11, 2017 9:34 PM"
+    }
+  },
+  {
+    "_uid": "5dd27edf0475791837d38874",
+    "gender": "male",
+    "name": {
+      "first": "Antoine",
+      "last": "Stokes"
+    },
+    "role": "UI Designer",
+    "age": 37,
+    "eyeColor": "blue",
+    "email": "antoine.stokes@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/antoine.stokes@something.co.uk.png",
+    "phone": "07827 483201",
+    "bio": "In nisi tempor cupidatat id ullamco reprehenderit mollit irure enim. Exercitation consequat anim cillum in.",
+    "num_projects": 12,
+    "isEmployed": true,
+    "employment": {
+      "start_date": "Tuesday, September 19, 2017 10:06 AM"
+    }
+  },
+  {
+    "_uid": "5dd27edf3ce6949060072919",
+    "gender": "male",
+    "name": {
+      "first": "Tommy",
+      "last": "Mayo"
+    },
+    "role": "Developer",
+    "age": 55,
+    "eyeColor": "blue",
+    "email": "tommy.mayo@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/tommy.mayo@something.co.uk.png",
+    "phone": "07888 599316",
+    "bio": "Cupidatat fugiat est commodo eiusmod tempor pariatur cupidatat laboris consequat cillum ex ipsum veniam et. Aliqua pariatur proident velit pariatur ea commodo ut eiusmod sint cupidatat non.",
+    "num_projects": 9,
+    "isEmployed": false,
+    "employment": {
+      "start_date": "Friday, April 13, 2018 4:06 AM",
+      "end_date": "Monday, October 7, 2019 3:40 AM"
+    }
+  },
+  {
+    "_uid": "5dd27edfbdaced689e5dcd78",
+    "gender": "female",
+    "name": {
+      "first": "Reita",
+      "last": "Drake"
+    },
+    "role": "Product Owner",
+    "age": 59,
+    "eyeColor": "green",
+    "email": "reita.drake@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/reita.drake@something.co.uk.png",
+    "phone": "07954 416339",
+    "bio": "Laboris ad qui ex sit consequat nulla adipisicing id pariatur dolor nulla anim laborum fugiat. Qui dolore duis adipisicing proident enim non minim tempor nostrud.",
+    "num_projects": 11,
+    "isEmployed": false,
+    "employment": {
+      "start_date": "Saturday, December 22, 2018 7:40 AM",
+      "end_date": "Wednesday, October 9, 2019 1:52 PM"
+    }
+  },
+  {
+    "_uid": "5dd27edfc69f73d78e497bf6",
+    "gender": "male",
+    "name": {
+      "first": "Miles",
+      "last": "Emerson"
+    },
+    "role": "Technical Architect",
+    "age": 54,
+    "eyeColor": "blue",
+    "email": "miles.emerson@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/miles.emerson@something.co.uk.png",
+    "phone": "07869 460325",
+    "bio": "Cillum commodo amet pariatur dolore cupidatat excepteur labore. Non magna excepteur aliqua sit esse nulla labore eu excepteur.",
+    "num_projects": 13,
+    "isEmployed": false,
+    "employment": {
+      "start_date": "Monday, March 12, 2018 7:50 PM",
+      "end_date": "Wednesday, June 5, 2019 10:57 PM"
+    }
+  },
+  {
+    "_uid": "5dd27edfb332dd9398ba2140",
+    "gender": "male",
+    "name": {
+      "first": "Myles",
+      "last": "Mann"
+    },
+    "role": "Product Owner",
+    "age": 40,
+    "eyeColor": "brown",
+    "email": "myles.mann@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/myles.mann@something.co.uk.png",
+    "phone": "07820 559202",
+    "bio": "Excepteur labore aute exercitation incididunt ullamco veniam cillum ad. Deserunt id laborum ut eiusmod aliquip sint fugiat ea aliquip est deserunt veniam laboris exercitation.",
+    "num_projects": 9,
+    "isEmployed": true,
+    "employment": {
+      "start_date": "Friday, January 2, 2015 2:06 AM"
+    }
+  },
+  {
+    "_uid": "5dd27edf897cbc6ff83750e1",
+    "gender": "female",
+    "name": {
+      "first": "Lacey",
+      "last": "Daugherty"
+    },
+    "role": "Chief Tea-maker",
+    "age": 25,
+    "eyeColor": "blue",
+    "email": "lacey.daugherty@something.co.uk",
+    "avatar": "https://api.adorable.io/avatars/64/lacey.daugherty@something.co.uk.png",
+    "phone": "07906 499317",
+    "bio": "Aliquip duis consequat Lorem voluptate reprehenderit qui pariatur culpa ut eiusmod consectetur duis ipsum. Ad aliquip ipsum id irure sunt est nulla nostrud occaecat deserunt tempor eu in ea.",
+    "num_projects": 4,
+    "isEmployed": false,
+    "employment": {
+      "start_date": "Monday, June 5, 2017 12:33 AM",
+      "end_date": "Friday, June 1, 2018 9:53 PM"
+    }
+  }
+]
