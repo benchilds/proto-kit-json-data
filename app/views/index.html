@@ -1,25 +1,50 @@
 
 {% extends "layout.html" %}
 
-{% set pageTitle = "Making dynamic prototypes with JSON data" %}
+{% set pageTitle = "Dynamic prototypes with JSON data" %}
 
 {% block pageTitle %}{{ pageTitle }}{% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
+<form action="/people" method="POST" role="form">
 
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">
-      <span class="govuk-caption-xl">GOV.UK Prototype Kit</span>
-      {{ pageTitle }}
-    </h1>
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">GOV.UK Prototype Kit</span>
+        {{ pageTitle }}
+      </h1>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <dl>
+        <dt>
+          <strong class="govuk-tag version">V.1</strong>
+          <button type="submit" class="button-as-link" title="Version 1: Basic implementation" name="version" value="1">Basic implementation using JSON</button>
+        </dt>
+        <dd>TODO Basic version</dd>
+        <dt>
+          <strong class="govuk-tag version">V.2</strong>
+          <button type="submit" class="button-as-link" title="Version 2: Using data for presentation" name="version" value="2">Using data for presentation</button>
+        </dt>
+        <dd>TODO TBC</dd>
+        <dt>
+          <strong class="govuk-tag version">V.3</strong>
+          <button type="submit" class="button-as-link" title="Version 3: Sorting data" name="version" value="3">Sorting data</button>
+        </dt>
+        <dd>TODO TBC</dd>
+        <dt>
+          <strong class="govuk-tag version">V.4</strong>
+          <button type="submit" class="button-as-link" title="Version 4: Combining data" name="version" value="4">Combining data</button>
+        </dt>
+        <dd>TODO TBC</dd>
+      </dl>
+    </div>
+
   </div>
 
-  <div class="govuk-grid-column-full">
-    <p class="govuk-body"><a href="/people">People page</a></p>
-  </div>
-
-</div>
+</form>
 
 {% endblock %}

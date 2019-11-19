@@ -18,18 +18,39 @@
     </div>
   </div>
 
+  {% if data.version > 2 %}
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <p class="govuk-body">Filters</p>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="govuk-grid-row lr-gutters">
     {% for person in data.people %}
-    <div class="govuk-grid-column-one-third-from-desktop person-panel">
-      <span class="govuk-caption-m">{{ person.role }}</span>
+    <div class="govuk-grid-column-one-third-from-desktop person-panel {% if data.version > 1 %}{{ person.gender }}{% endif %}">
+      <span class="govuk-caption-m role">{{ person.role }}</span>
       <h2 class="govuk-heading-m">{{ person.name.first }} {{ person.name.last }}</h2>
-      <p class="govuk-body">{{ person.bio }}</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>GOV.UK Design System</li>
+      <ul class="govuk-list person-meta">
+        <li class="avatar"><img src="{{ person.avatar }}" width="100%" /></li>
+        <li class="age"><strong>Age:</strong> {{ person.age }}</li>
+        <li class="projects"><strong>Projects:</strong> {{ person.num_projects }}</li>
+        {% if data.version > 3 %}<li class="collaborators"><strong>Collaborators:</strong> {{ person.collaborators }}</li>{% endif %}
       </ul>
       <button type="submit" class="govuk-button" name="person" value="{{ person._uid }}" title="View {{ person.name.first }}'s details">View {{ person.name.first }}'s details</button>
     </div>
     {% endfor %}
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <ul class="govuk-list govuk-list--bullet version-switcher">
+        <li><button type="submit" class="button-as-link" formaction="/people" title="Version 1: Basic implementation" name="version" value="1">v.1 (Basic)</button></li>
+        <li><button type="submit" class="button-as-link" formaction="/people" title="Version 2: Using data for presentation" name="version" value="2">v.2 (Styling)</button></li>
+        <li><button type="submit" class="button-as-link" formaction="/people" title="Version 3: Sorting data" name="version" value="3">v.3 (Sorting)</button></li>
+        <li><button type="submit" class="button-as-link" formaction="/people" title="Version 4: Combining data" name="version" value="4">v.4 (Combining data)</button></li>
+      </ul>
+    </div>
   </div>
 
 </form>
