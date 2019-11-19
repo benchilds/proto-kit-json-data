@@ -80,12 +80,11 @@ router.post("/people", function (req, res) {
   console.log('Route: /people ------------------------------------------------')
   setDefaults(req)
 
-  await function pause(ms) {
-    console.log("Pause starting...")
-    setTimeout(function() { console.log("Pause done"); }, ms);
-  }
-
-  pause(3000);
+  // function pause(ms) {
+  //   console.log("Pause starting...")
+  //   setTimeout(function() { console.log("Pause done"); }, ms);
+  // }
+  // pause(3000);
 
   res.render('people')
   
