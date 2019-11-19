@@ -86,6 +86,25 @@ router.post("/people", function (req, res) {
   // }
   // pause(3000);
 
+  // v.3: Sort the data 
+  if (req.session.data.version > 2) {
+
+    if (req.session.data.sort == 'age') {
+      req.session.data.people.sort((a, b) => a.age - b.age);
+    } else if (req.session.data.sort == 'projects') {
+      req.session.data.people.sort((a, b) => a.num_projects - b.num_projects);
+    } else if (req.session.data.sort == 'first-name') {
+      req.session.data.people.sort((a, b) => a.name.first < b.name.first);
+    } else if (req.session.data.sort == 'last-name') {
+      req.session.data.people.sort((a, b) => a.name.last < b.name.last);
+    } else if (req.session.data.sort == 'collaborators') {
+      req.session.data.people.sort((a, b) => a.collaborators - b.collaborators);
+    } else if (req.session.data.sort == 'random') {
+      req.session.data.people.sort(() => 0.5 - Math.random()) // Shuffle
+    }
+
+  }
+
   res.render('people')
   
 })
