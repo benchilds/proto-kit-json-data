@@ -1,0 +1,39 @@
+
+{% extends "layout.html" %}
+
+{% set pageTitle = "People" %}
+
+{% block pageTitle %}{{ pageTitle }}{% endblock %}
+
+{% block content %}
+
+<form action="/person" method="POST" role="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">GOV.UK Prototype Kit</span>
+        {{ pageTitle }}
+      </h1>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    {% for person in data.people %}
+    <div class="govuk-grid-column-one-third-from-desktop person-panel">
+      <span class="govuk-caption-m">{{ person.role }}</span>
+      <h2 class="govuk-heading-m">{{ person.name.first }} {{ person.name.last }}</h2>
+      <p class="govuk-body">{{ person.bio }}</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>GOV.UK Design System</li>
+      </ul>
+      <button type="submit" class="govuk-button" name="person" value="{{ person._uid }}" title="View {{ person.name.first }}'s details">View {{ person.name.first }}'s details</button>
+    </div>
+    {% endfor %}
+  </div>
+
+</form>
+
+{{ data.people[0] | log }}
+
+{% endblock %}

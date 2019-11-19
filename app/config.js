@@ -23,7 +23,7 @@ module.exports = {
   useDocumentation: 'false',
 
   // Force HTTP to redirect to HTTPS on production
-  useHttps: 'true',
+  useHttps: 'false',
 
   // Cookie warning - update link to service's cookie page.
   cookieText: 'GOV.UK uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>',

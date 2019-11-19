@@ -15,4 +15,54 @@ $govuk-assets-path: '/govuk/assets/';
 // Components that aren't in Frontend
 @import "components/cookie-banner";
 
-// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+/*--- FUNCTIONS --------------------------------------------------------------*/
+
+// Lighten a color
+// @param {Color} $color - color to tint
+// @return {Color}
+@function tint-25($color) {
+  @return mix(#ffffff, $color, 25%);
+}
+@function tint-50($color) {
+  @return mix(#ffffff, $color, 50%);
+}
+@function tint-75($color) {
+  @return mix(#ffffff, $color, 75%);
+}
+@function tint-max($color) {
+  @return mix(#ffffff, $color, 85%);
+}
+
+// Darken a color
+// @param {Color} $color - color to shade
+// @return {Color}
+@function shade-25($color) {
+  @return mix(#0b0c0c, $color, 25%);
+}
+@function shade-50($color) {
+  @return mix(#0b0c0c, $color, 50%);
+}
+@function shade-75($color) {
+  @return mix(#0b0c0c, $color, 75%);
+}
+@function shade-max($color) {
+  @return mix(#0b0c0c, $color, 85%);
+}
+
+/*--- STYLES -----------------------------------------------------------------*/
+
+div.person-panel {
+
+  border: govuk-px-to-rem(5) solid govuk-colour('white');
+  padding: govuk-spacing(3);
+  background-color: govuk-colour('light-grey');
+
+  a {
+    background-color: govuk-colour('pink');
+  }
+  
+  &:hover {
+    background-color: tint-75(govuk-colour('light-pink'));
+  }
+
+}
