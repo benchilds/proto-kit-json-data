@@ -7,7 +7,9 @@
 
 {% block content %}
 
-<form action="/person" method="POST" role="form">
+{{ data | log }}
+
+<form action="/people" method="POST" role="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -21,13 +23,56 @@
   {% if data.version > 2 %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <p class="govuk-body">Filters</p>
+      <div class="filter-bar">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h3 class="govuk-fieldset__heading govuk-heading-m">Sort people</h3>
+            </legend>
+
+            <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sort-age" name="sort" type="radio" value="age" {% if data.sort == 'age' %}checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="sort-age">Age</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sort-projects" name="sort" type="radio" value="projects" {% if data.sort == 'projects' %}checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="sort-projects">Projects</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sort-first-name" name="sort" type="radio" value="first-name" {% if data.sort == 'first-name' %}checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="sort-first-name">First name</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sort-last-name" name="sort" type="radio" value="last-name" {% if data.sort == 'last-name' %}checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="sort-last-name">Last name</label>
+              </div>
+              {% if data.version > 3 %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sort-collaborators" name="sort" type="radio" value="collaborators" {% if data.sort == 'collaborators' %}checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="sort-collaborators">Collaborators</label>
+              </div>
+              {% endif %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sort-random" name="sort" type="radio" value="random" {% if data.sort == 'random' %}checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="sort-random">Random</label>
+              </div>
+            </div>
+
+            <button type="submit" class="govuk-button" title="Filter people">Sort people</button>
+
+          </fieldset>
+        </div>
+      </div>
     </div>
   </div>
   {% endif %}
 
   <div class="govuk-grid-row lr-gutters">
+
     {% for person in data.people %}
+
     <div class="govuk-grid-column-one-third-from-desktop person-panel {% if data.version > 1 %}{{ person.gender }}{% endif %}">
       <span class="govuk-caption-m role">{{ person.role }}</span>
       <h2 class="govuk-heading-m">{{ person.name.first }} {{ person.name.last }}</h2>
@@ -37,18 +82,21 @@
         <li class="projects"><strong>Projects:</strong> {{ person.num_projects }}</li>
         {% if data.version > 3 %}<li class="collaborators"><strong>Collaborators:</strong> {{ person.collaborators }}</li>{% endif %}
       </ul>
-      <button type="submit" class="govuk-button" name="person" value="{{ person._uid }}" title="View {{ person.name.first }}'s details">View {{ person.name.first }}'s details</button>
+      {# <button type="submit" class="button-as-link" formaction="/person" name="person" value="{{ person._uid }}" title="View {{ person.name.first }}'s details">View {{ person.name.first }}'s details</button> #}
+      <button type="submit" class="govuk-button" formaction="/person" name="person" value="{{ person._uid }}" title="View {{ person.name.first }}'s details">View {{ person.name.first }}'s details</button>
     </div>
+
     {% endfor %}
+
   </div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <ul class="govuk-list govuk-list--bullet version-switcher">
-        <li><button type="submit" class="button-as-link" formaction="/people" title="Version 1: Basic implementation" name="version" value="1">v.1 (Basic)</button></li>
-        <li><button type="submit" class="button-as-link" formaction="/people" title="Version 2: Using data for presentation" name="version" value="2">v.2 (Styling)</button></li>
-        <li><button type="submit" class="button-as-link" formaction="/people" title="Version 3: Sorting data" name="version" value="3">v.3 (Sorting)</button></li>
-        <li><button type="submit" class="button-as-link" formaction="/people" title="Version 4: Combining data" name="version" value="4">v.4 (Combining data)</button></li>
+        <li><button type="submit" class="button-as-link" title="Version 1: Basic implementation" name="version" value="1">v.1 (Basic)</button></li>
+        <li><button type="submit" class="button-as-link" title="Version 2: Using data for presentation" name="version" value="2">v.2 (Styling)</button></li>
+        <li><button type="submit" class="button-as-link" title="Version 3: Sorting data" name="version" value="3">v.3 (Sorting)</button></li>
+        <li><button type="submit" class="button-as-link" title="Version 4: Combining data" name="version" value="4">v.4 (Combining data)</button></li>
       </ul>
     </div>
   </div>
