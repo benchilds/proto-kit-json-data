@@ -84,6 +84,38 @@ router.post("/people", function (req, res) {
   // v.4: Combine with other data
   if (req.session.data.version > 3) {
 
+    // This could be any data - usually not the same dataset data
+    // e.g. comments, projects, tags, etc
+    // But for the sake of demonstration we'll use our existing dataset again
+
+    let peopleClone = [...req.session.data.people]
+    
+    req.session.data.people.forEach(function(p, i) {
+      
+      let collaborators = [...peopleClone]
+      console.log(`I'm collaborator ${i}`)
+
+      console.log(`Num collaborators: ${collaborators.length}`)
+      
+      // Remove this person from the collaborators!
+      collaborators = collaborators.filter(c => c._uid != p._uid)
+      console.log(`Num collaborators: ${collaborators.length}`)
+
+      // Only use collaborators who were working during the same time period
+      collaborators = collaborators.filter(c => !c.employment.end_date || c.employment.end_date > p.employment.start_date)
+      console.log(`Num collaborators: ${collaborators.length}`)
+      
+      // Get up 2-10 random number of collaborators
+      collaborators = collaborators.sort(() => 0.5 - Math.random()) // Shuffle
+      let numCollaborators = Math.floor(Math.random() * 8) + 2
+      collaborators = collaborators.slice(0, numCollaborators)
+      console.log(`Num collaborators: ${collaborators.length}`)
+      
+      // Add the collaborators to the person data
+      // p.collaborators = collaborators
+
+    });
+
   }
 
   res.render('people')
