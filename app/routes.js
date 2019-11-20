@@ -6,28 +6,6 @@ const fs = require("fs-extra")
 // Functions
 // #############################################################################
 
-// Set defaults if anything missing (usually due to deep-linking)
-function setDefaults(req) {
-  
-  console.log(`req.session.data.version: ${req.session.data.version}`)
-  console.log(`req.session.data.sort: ${req.session.data.sort}`)
-
-  // Version
-  if (!req.session.data.version) {
-    console.log('Set default for version')
-    req.session.data.version = 1
-    console.log(`req.session.data.version: ${req.session.data.version}`)
-  }
-  
-  // Sorting
-  if (req.session.data.version > 2 && !req.session.data.sort) {
-    console.log('Set default for sort')
-    req.session.data.sort = 'age'
-    console.log(`req.session.data.sort: ${req.session.data.sort}`)
-  }
-  
-}
-
 // Load JSON data from file ----------------------------------------------------
 
 // fileName excludes path but includes extension e.g. file.json
@@ -44,14 +22,13 @@ function loadJSONFromFileSync(fileName) {
 // #############################################################################
 
 // GET /people|person ----------------------------------------------------------
-// Basically just to catch and handle deep-linking
+// Basically just to avoid any deep-linking so we can set everything up at /
 
 router.get(/(people|person)/, function (req, res) {
   
   console.log(`Route: GET /${req.params[0]} --------------------------------------------`)
-  setDefaults(req)
   
-  res.render(req.params[0])
+  res.redirect('/')
   
 })
 
@@ -78,7 +55,6 @@ router.get("/", function (req, res) {
 router.post("/people", function (req, res) {
   
   console.log('Route: /people ------------------------------------------------')
-  setDefaults(req)
 
   // function pause(ms) {
   //   console.log("Pause starting...")
@@ -88,7 +64,7 @@ router.post("/people", function (req, res) {
 
   // v.3: Sort the data 
   if (req.session.data.version > 2) {
-
+    
     if (req.session.data.sort == 'age') {
       req.session.data.people.sort((a, b) => a.age - b.age);
     } else if (req.session.data.sort == 'projects') {
@@ -102,6 +78,11 @@ router.post("/people", function (req, res) {
     } else if (req.session.data.sort == 'random') {
       req.session.data.people.sort(() => 0.5 - Math.random()) // Shuffle
     }
+    
+  }
+  
+  // v.4: Combine with other data
+  if (req.session.data.version > 3) {
 
   }
 
@@ -114,7 +95,6 @@ router.post("/people", function (req, res) {
 router.post("/person", function (req, res) {
   
   console.log('Route: /person ------------------------------------------------')
-  setDefaults(req)
 
   res.render('person')
 
