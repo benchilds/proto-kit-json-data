@@ -15,8 +15,26 @@
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-xl">GOV.UK Prototype Kit</span>
-        {{ pageTitle }}
+        {{ pageTitle }} (v.{{ data.version }})
       </h1>
+      {% if data.version == 1 %}
+      <p class="govuk-body-l">For the sake of demonstrating the possibilities when using dynamic data, below are some contact cards for an imaginary digital team. It should be immediately noticable that, whilst the demo uses the Prototype Kit and the GOV.UK Design System, to avoid any likeness to any actual GOV.UK projects the visual style is deliberately 'not very GOV.UK'.</p>
+      {% elif data.version == 2 %}
+      <p class="govuk-body-l">
+        Using dynamic data allows for much easier and more flexible styling. All of the styling <em>could</em> be demonstrated with a static page but it's much trickier to keep track of every combination and to stay consistent as a design is iterated. Data attributes are used to add css classes, so just ensure every css class has a design.
+        <span class="govuk-hint">Note: Remember that the visual style is <em>deliberately</em> 'not very GOV.UK'. In fact, it's not even very nice!</span>
+      </p>
+      {% elif data.version == 3 %}
+      <p class="govuk-body-l">
+        TBC
+        <span class="govuk-hint">Note: Remember that the visual style is <em>deliberately</em> 'not very GOV.UK'. In fact, it's not even very nice!</span>
+      </p>
+      {% elif data.version == 4 %}
+      <p class="govuk-body-l">
+        TBC
+        <span class="govuk-hint">Note: Remember that the visual style is <em>deliberately</em> 'not very GOV.UK'. In fact, it's not even very nice!</span>
+      </p>
+      {% endif %}
     </div>
   </div>
 
