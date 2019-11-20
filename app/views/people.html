@@ -91,16 +91,15 @@
 
     {% for person in data.people %}
 
-    <div class="govuk-grid-column-one-third-from-desktop person-panel {% if data.version > 1 %}{{ person.gender }}{% endif %}">
-      <span class="govuk-caption-m role">{{ person.role }}</span>
+    <div class="govuk-grid-column-one-third-from-desktop person-panel {% if data.version > 1 %}{{ person.gender }}{% endif %} {% if data.version > 1 and not person.isEmployed %}unavailable{% endif %}">
+      <span class="govuk-caption-m role">{{ person.role }}{% if data.version > 1 and not person.isEmployed %}<strong class="govuk-tag unavailable">archived</strong>{% endif %}</span>
       <h2 class="govuk-heading-m">{{ person.name.first }} {{ person.name.last }}</h2>
       <ul class="govuk-list person-meta">
         <li class="avatar"><img src="{{ person.avatar }}" width="100%" /></li>
         <li class="age"><strong>Age:</strong> {{ person.age }}</li>
         <li class="projects"><strong>Projects:</strong> {{ person.num_projects }}</li>
-        {% if data.version > 3 %}<li class="collaborators"><strong>Collaborators:</strong> {{ person.collaborators }}</li>{% endif %}
+        {# {% if data.version > 3 %}<li class="collaborators"><strong>Collaborators:</strong> {{ person.collaborators | length }}</li>{% endif %} #}
       </ul>
-      {# <button type="submit" class="button-as-link" formaction="/person" name="person" value="{{ person._uid }}" title="View {{ person.name.first }}'s details">View {{ person.name.first }}'s details</button> #}
       <button type="submit" class="govuk-button" formaction="/person" name="person" value="{{ person._uid }}" title="View {{ person.name.first }}'s details">View {{ person.name.first }}'s details</button>
     </div>
 
@@ -110,11 +109,11 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <ul class="govuk-list govuk-list--bullet version-switcher">
-        <li><button type="submit" class="button-as-link" title="Version 1: Basic implementation" name="version" value="1">v.1 (Basic)</button></li>
-        <li><button type="submit" class="button-as-link" title="Version 2: Using data for presentation" name="version" value="2">v.2 (Styling)</button></li>
-        <li><button type="submit" class="button-as-link" title="Version 3: Sorting data" name="version" value="3">v.3 (Sorting)</button></li>
-        <li><button type="submit" class="button-as-link" title="Version 4: Combining data" name="version" value="4">v.4 (Combining data)</button></li>
+      <ul class="govuk-list version-switcher">
+        <li><strong class="govuk-tag version">V.1</strong><button type="submit" class="button-as-link" title="Version 1: Basic implementation" name="version" value="1">Content stored as data</button></li>
+        <li><strong class="govuk-tag version">V.2</strong><button type="submit" class="button-as-link" title="Version 2: Using data for presentation" name="version" value="2">Styling with data</button></li>
+        <li><strong class="govuk-tag version">V.3</strong><button type="submit" class="button-as-link" title="Version 3: Sorting data" name="version" value="3">Sorting data</button></li>
+        <li><strong class="govuk-tag version">V.4</strong><button type="submit" class="button-as-link" title="Version 4: Combining data" name="version" value="4">Combining data</button></li>
       </ul>
     </div>
   </div>

@@ -99,12 +99,20 @@ button {
 }
 
 .govuk-tag {
+
   &.version {
     margin-right: govuk-px-to-rem(5);
     margin-bottom: govuk-px-to-rem(5);
     background-color: tint-50(govuk-colour('mid-grey'));
     color: govuk-colour('dark-grey');
     font-size: govuk-px-to-rem(14);
+  }
+  
+  &.unavailable {
+    margin-left: govuk-px-to-rem(10);
+    color: govuk-colour('dark-grey');
+    background-color: govuk-colour('mid-grey');
+    font-size: govuk-px-to-rem(12);
   }
 }
 
@@ -184,6 +192,30 @@ div.person-panel {
     }
   }
 
+  &.unavailable {
+    background-color: tint-50(govuk-colour('mid-grey'));
+    
+    h2,
+    ul.person-meta li.avatar {
+      border-color: govuk-colour('mid-grey');
+    }
+
+    h2 { text-decoration: line-through; }
+    h2, li { color: govuk-colour('dark-grey'); }
+
+    ul.person-meta li.avatar { opacity: 0.25; }
+
+    button {
+      background-color: govuk-colour('dark-grey');
+      // &:hover { background-color: shade-50(govuk-colour('pink'));}
+    }
+
+    &:hover {
+      background-color: tint-50(govuk-colour('mid-grey'));
+      span.govuk-caption-m.role { color: govuk-colour('dark-grey'); }
+    }
+  }
+
 }
 
 div.filter-bar {
@@ -202,6 +234,22 @@ div.filter-bar {
   .govuk-form-group,
   button {
     margin-bottom: 0;
+  }
+
+}
+
+ul.version-switcher {
+  margin: govuk-spacing(6) 0;
+  border: 1px solid govuk-colour('mid-grey');
+  padding: govuk-spacing(3);
+  background-color: govuk-colour('light-grey');
+
+  li {
+    display: inline-block;
+    margin-right: govuk-spacing(5);
+    margin-bottom: 0;
+
+    &:last-of-type { margin-right: 0; }
   }
 
 }
