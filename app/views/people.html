@@ -7,8 +7,6 @@
 
 {% block content %}
 
-{{ data | log }}
-
 <form action="/people" method="POST" role="form">
 
   <div class="govuk-grid-row">
@@ -98,7 +96,7 @@
         <li class="avatar"><img src="{{ person.avatar }}" width="100%" /></li>
         <li class="age"><strong>Age:</strong> {{ person.age }}</li>
         <li class="projects"><strong>Projects:</strong> {{ person.num_projects }}</li>
-        {# {% if data.version > 3 %}<li class="collaborators"><strong>Collaborators:</strong> {{ person.collaborators | length }}</li>{% endif %} #}
+        {% if data.version > 3 %}<li class="collaborators"><strong>Collaborators:</strong> {{ person.collaborators | length }}</li>{% endif %}
       </ul>
       <button type="submit" class="govuk-button" formaction="/person" name="person" value="{{ person._uid }}" title="View {{ person.name.first }}'s details">View {{ person.name.first }}'s details</button>
     </div>
@@ -119,7 +117,5 @@
   </div>
 
 </form>
-
-{{ data.people[0] | log }}
 
 {% endblock %}
