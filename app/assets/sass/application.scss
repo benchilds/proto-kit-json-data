@@ -123,7 +123,12 @@ div.person-panel {
   padding: govuk-spacing(3);
   background-color: govuk-colour('light-grey');
 
-  h2 { border-bottom: 2px solid govuk-colour('mid-grey'); }
+  h3 { border-bottom: 2px solid govuk-colour('mid-grey'); }
+
+  .sorted-by {
+    font-weight: bold;
+    color: govuk-colour('red');
+  }
 
   ul.person-meta {
     @include govuk-clearfix;
@@ -159,7 +164,7 @@ div.person-panel {
   }
   
   &.male {
-    h2, 
+    h3, 
     ul.person-meta li.avatar {
       border-color: govuk-colour('blue');
     }
@@ -176,7 +181,7 @@ div.person-panel {
   }
   
   &.female {
-    h2,
+    h3,
     ul.person-meta li.avatar {
       border-color: govuk-colour('pink');
     }
@@ -195,13 +200,13 @@ div.person-panel {
   &.unavailable {
     background-color: tint-50(govuk-colour('mid-grey'));
     
-    h2,
+    h3,
     ul.person-meta li.avatar {
       border-color: govuk-colour('mid-grey');
     }
 
-    h2 { text-decoration: line-through; }
-    h2, li { color: govuk-colour('dark-grey'); }
+    h3 { text-decoration: line-through; }
+    h3, li { color: govuk-colour('dark-grey'); }
 
     ul.person-meta li.avatar { opacity: 0.25; }
 
@@ -213,6 +218,10 @@ div.person-panel {
     &:hover {
       background-color: tint-50(govuk-colour('mid-grey'));
       span.govuk-caption-m.role { color: govuk-colour('dark-grey'); }
+    }
+    .sorted-by {
+      color: govuk-colour('dark-grey');
+      font-weight: inherit;
     }
   }
 

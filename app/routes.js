@@ -119,6 +119,10 @@ router.post("/people", function (req, res) {
     // This could be any data - usually not the same data
     // e.g. comments, projects, tags, etc
     // But for the sake of demonstration we'll use our existing dataset again
+
+    // Obviously because we're just randomising the data, the relationships
+    // will not be valid. For instance, personA might have personB as a
+    // collaborator but personB probably won't have personA as a collaborator
     
     // For each person in our people data, configure and add further data
     req.session.data.people.forEach(function(p) {
@@ -161,6 +165,9 @@ router.post("/people", function (req, res) {
 router.post("/person", function (req, res) {
   
   console.log('Route: /person ------------------------------------------------')
+
+  // Get the correct person from the people data
+  req.session.data.person = req.session.data.people.filter(p => p._uid == req.session.data.person_uid)[0]
 
   res.render('person')
 

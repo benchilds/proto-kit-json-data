@@ -12,7 +12,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
-        <span class="govuk-caption-xl">GOV.UK Prototype Kit</span>
+        <span class="govuk-caption-xl">Imaginary Digital Team</span>
         {{ pageTitle }} (v.{{ data.version }})
       </h1>
       {% if data.version == 1 %}
@@ -91,14 +91,19 @@
 
     <div class="govuk-grid-column-one-third-from-desktop person-panel {% if data.version > 1 %}{{ person.gender }}{% endif %} {% if data.version > 1 and not person.isEmployed %}unavailable{% endif %}">
       <span class="govuk-caption-m role">{{ person.role }}{% if data.version > 1 and not person.isEmployed %}<strong class="govuk-tag unavailable">archived</strong>{% endif %}</span>
-      <h2 class="govuk-heading-m">{{ person.name.first }} {{ person.name.last }}</h2>
+      <h3 class="govuk-heading-m">
+        {% if data.version > 2 and data.sort == 'first-name' %}<span class="sorted-by">{{ person.name.first }}</span>{% else %}{{ person.name.first }}{% endif %} 
+        {% if data.version > 2 and data.sort == 'last-name' %}<span class="sorted-by">{{ person.name.last }}</span>{% else %}{{ person.name.last }}{% endif %}
+      </h3>
       <ul class="govuk-list person-meta">
         <li class="avatar"><img src="{{ person.avatar }}" width="100%" /></li>
-        <li class="age"><strong>Age:</strong> {{ person.age }}</li>
-        <li class="projects"><strong>Projects:</strong> {{ person.num_projects }}</li>
-        {% if data.version > 3 %}<li class="collaborators"><strong>Collaborators:</strong> {{ person.collaborators | length }}</li>{% endif %}
+        <li class="age {% if data.version > 2 and data.sort == 'age' %}sorted-by{% endif %}"><strong>Age:</strong> {{ person.age }}</li>
+        <li class="projects {% if data.version > 2 and data.sort == 'projects' %}sorted-by{% endif %}"><strong>Projects:</strong> {{ person.num_projects }}</li>
+        {% if data.version > 3 %}
+        <li class="collaborators {% if data.version > 2 and data.sort == 'collaborators' %}sorted-by{% endif %}"><strong>Collaborators:</strong> {{ person.collaborators | length }}</li>
+        {% endif %}
       </ul>
-      <button type="submit" class="govuk-button" formaction="/person" name="person" value="{{ person._uid }}" title="View {{ person.name.first }}'s details">View {{ person.name.first }}'s details</button>
+      <button type="submit" class="govuk-button" formaction="/person" name="person_uid" value="{{ person._uid }}" title="View {{ person.name.first }}'s details">View {{ person.name.first }}'s details</button>
     </div>
 
     {% endfor %}

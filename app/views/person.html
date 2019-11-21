@@ -7,28 +7,40 @@
 
 {% block content %}
 
+  {{ data.person | log }}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
-        <span class="govuk-caption-xl">GOV.UK Prototype Kit</span>
-        {{ pageTitle }}
+        <span class="govuk-caption-xl">Imaginary Digital Team</span>
+        {{ data.person.name.first }} {{ data.person.name.last }}
       </h1>
     </div>
   </div>
 
-  <div class="govuk-grid-row">
-    {% for person in data.people %}
-    <div class="govuk-grid-column-one-third-from-desktop person-panel">
-      <span class="govuk-caption-m">{{ person.role }}</span>
-      <h2 class="govuk-heading-m">{{ person.name.first }} {{ person.name.last }}</h2>
-      <p class="govuk-body">{{ person.bio }}</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>GOV.UK Design System</li>
-      </ul>
-      <a href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Start now</a>
+  <div class="govuk-grid-row lr-gutters">
+
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-m">People that {{ data.person.name.first }} has collaborated with</h2>
     </div>
+
+    {% for person in data.person.collaborators %}
+
+    <div class="govuk-grid-column-one-third-from-desktop person-panel {% if data.version > 1 %}{{ person.gender }}{% endif %} {% if data.version > 1 and not person.isEmployed %}unavailable{% endif %}">
+      <span class="govuk-caption-m role">{{ person.role }}{% if data.version > 1 and not person.isEmployed %}<strong class="govuk-tag unavailable">archived</strong>{% endif %}</span>
+      <h3 class="govuk-heading-m">{{ person.name.first }} {{ person.name.last }}</h3>
+      <ul class="govuk-list person-meta">
+        <li class="avatar"><img src="{{ person.avatar }}" width="100%" /></li>
+        <li class="age"><strong>Age:</strong> {{ person.age }}</li>
+        <li class="projects"><strong>Projects:</strong> {{ person.num_projects }}</li>
+        {% if data.version > 3 %}<li class="collaborators"><strong>Collaborators:</strong> {{ person.collaborators | length }}</li>{% endif %}
+      </ul>
+      <button type="submit" class="govuk-button" formaction="/person" name="person_uid" value="{{ person._uid }}" title="View {{ person.name.first }}'s details">View {{ person.name.first }}'s details</button>
+    </div>
+
     {% endfor %}
-</div>
+
+  </div>
 
 {{ data.people[0] | log }}
 
